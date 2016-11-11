@@ -1,0 +1,32 @@
+{
+  "name": "wut-wut-4-dinner",
+  "version": "1.0.0",
+  "description": "Get recipes for what's in season before shopping at the farmer's market.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spiritphyz/wut-wut-4-dinner.git"
+  },
+  "keywords": [
+    "recipes",
+    "food",
+    "local",
+    "sustainable",
+    "organic"
+  ],
+  "author": "Tony Le",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/spiritphyz/wut-wut-4-dinner/issues"
+  },
+  "homepage": "https://github.com/spiritphyz/wut-wut-4-dinner#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "request": "^2.78.0"
+  }
+}
