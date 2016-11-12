@@ -13,7 +13,7 @@ Get recipes based on what's in season for your location.
 
 ## Goals ##
 Use unknown technologies to implement a full-stack app.
- - Spoontacular API
+ - Spoonacular API
  - (maybe an API for in-season food)
  - (maybe an API for nearby farmer's markets)
  - Cassandra for storage
