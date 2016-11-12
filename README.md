@@ -1,3 +1,4 @@
+<img src="https://cloud.githubusercontent.com/assets/7908723/20235152/59d8d64a-a83f-11e6-9534-4119d03f3874.png" width="100">
 # What’s for Dinner? #
 Get recipes based on what's in season for your location.
 
