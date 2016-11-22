@@ -1,5 +1,5 @@
 {
-  "name": "wut-wut-4-dinner",
+  "name": "wut-wut-4-din-din",
   "version": "1.0.0",
   "description": "Get recipes for what's in season before shopping at the farmer's market.",
   "main": "server.js",
@@ -27,6 +27,9 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "request": "^2.78.0"
+    "redis": "^2.6.3",
+    "request": "^2.78.0",
+    "vue": "^2.0.8",
+    "vuex": "^2.0.0"
   }
 }

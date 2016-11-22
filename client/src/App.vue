@@ -2,30 +2,23 @@
   <div id="app">
    <form action="getRecipes">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input id="inputSeasonalItems" class="mdl-textfield__input" type="text" name="seasonalItems">
+        <input id="inputSeasonalItems" class="mdl-textfield__input" type="text" name="seasonalItems" />
         <label class="mdl-textfield__label" for="inputSeasonalItems">Add some seasonal items</label>
       </div>
       <div>
-        <input type="submit" value="Submit">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+          <i class="material-icons">add</i>
+        </button>
       </div>
-    </form> 
+   </form> 
 
-  <!-- Accent-colored raised button with ripple -->
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-    Button
-  </button>
-  
-  <!-- Colored FAB button -->
-  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-    <i class="material-icons">add</i>
-  </button>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'Wut Wut 4 Din Din'
-}
+  export default {
+    name: 'Wut Wut 4 Din Din'
+  };
 </script>
 
 <style>
@@ -33,8 +26,8 @@ export default {
   font-family: 'Open Sans', 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: left;
-  font-size: 1em;
+  text-align: center;
+  font-size: 10em;
   color: #2c3e50;
   margin-top: 60px;
 }
