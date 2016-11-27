@@ -1,8 +1,136 @@
-const California = {
+/**
+ * Uses 2-letter abbreviations for U.S. state names.
+ * Examples to access the exported object:
+ * 
+ *   CA.November.early.produce
+ *   CA.December.late.produce
+ *
+ * @return {array of strings}   representing in-season vegetables (mostly)
+ */
+
+
+/* skeleton to add more veggies by month
+   http://www.simplesteps.org/eat-local/state/california
+
+  'Month': {
+    'early': {
+      'produce': [ 
+        ]
+    },
+    'late': {
+      'produce': [ 
+        ]
+    }
+  },
+
+ */
+
+
+export const CA = {
+  'October': {
+    'early': {
+      'produce': [ 
+        'Apples',
+        'Asian Pears',
+        'Asparagus',
+        'Avocados',
+        'Beets',
+        'Bok Choy',
+        'Broccoli',
+        'Brussels Sprouts',
+        'Cabbage',
+        'Carrots',
+        'Cauliflower',
+        'Celery',
+        'Cucumbers',
+        'Eggplant',
+        'Fennel',
+        'Grapefruit',
+        'Grapes',
+        'Halibut',
+        'Pacific',
+        'Kale',
+        'Lettuce',
+        'Mushrooms',
+        'Nectarines',
+        'Okra',
+        'Onions',
+        'Oranges',
+        'Peaches',
+        'Pears',
+        'Peas',
+        'Pistachios',
+        'Potatoes',
+        'Radishes',
+        'Raspberries',
+        'Rhubarb',
+        'Rutabaga',
+        'Scallions',
+        'Snap Peas',
+        'Spinach',
+        'Squash',
+        'Strawberries',
+        'Sweet Potatoes',
+        'Tomatoes',
+        'Turkey - Bourbon Red',
+        'Turkey - Standard Bronze',
+        'Turnips'
+      ]
+    },
+    'late': {
+      'produce': [ 
+        'Apples',
+        'Asian Pears',
+        'Asparagus',
+        'Avocados',
+        'Beets',
+        'Bok Choy',
+        'Broccoli',
+        'Brussels Sprouts',
+        'Cabbage',
+        'Carrots',
+        'Cauliflower',
+        'Celery',
+        'Cucumbers',
+        'Eggplant',
+        'Fennel',
+        'Grapefruit',
+        'Grapes',
+        'Halibut',
+        'Pacific',
+        'Kale',
+        'Lettuce',
+        'Mushrooms',
+        'Nectarines',
+        'Okra',
+        'Onions',
+        'Oranges',
+        'Peaches',
+        'Pears',
+        'Peas',
+        'Pistachios',
+        'Potatoes',
+        'Radishes',
+        'Raspberries',
+        'Rhubarb',
+        'Rutabaga',
+        'Scallions',
+        'Snap Peas',
+        'Spinach',
+        'Squash',
+        'Strawberries',
+        'Sweet Potatoes',
+        'Tomatoes',
+        'Turkey - Bourbon Red',
+        'Turkey - Standard Bronze',
+        'Turnips'
+        ]
+    }
+  },
   'November': {
     'early': {
-      'produce': 
-        [ 'Apples',
+      'produce': [ 
+          'Apples',
           'Asparagus',
           'Avocados',
           'Beets',

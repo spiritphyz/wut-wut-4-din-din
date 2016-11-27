@@ -7,7 +7,9 @@
         type="text"
         name="seasonalItems"
         :value="newVeggie"
-        @change="getVeggie">
+        @change="getVeggie"
+        @keyup.enter="addVeggie"
+      >
       <label class="mdl-textfield__label" for="inputSeasonalItems">
         Add more custom veggies...
       </label>

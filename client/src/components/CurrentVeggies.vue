@@ -1,18 +1,18 @@
 <template>
 <div id="current-veggies">
-    <h3 v-if="veggies.length > 0">Current ({{veggies.length}})</h3>
+    <h2 v-if="veggies.length > 0">Current: {{veggies.length}}</h2>
     <ul class="demo-list-item mdl-list">
       <li class="mdl-list__item" v-for="veggie in veggies">
         {{veggie.body}}
         <div class="btn-group">
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" @click="edit(veggie)">
-            <i class="material-icons mdl-list__item-icon">edit</i> Edit
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" @click="edit(veggie)">
+            Edit
           </button>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" @click="select(veggie)">
-            <i class="material-icons mdl-list__item-icon">add circle outline</i> Select
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" @click="select(veggie)">
+            Select
           </button>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" @click="remove(veggie)">
-            <i class="material-icons mdl-list__item-icon">remove circle outline</i> Remove
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" @click="remove(veggie)">
+            Remove
           </button>
         </div>
       </li>
