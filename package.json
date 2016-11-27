@@ -31,5 +31,9 @@
     "request": "^2.78.0",
     "vue": "^2.0.8",
     "vuex": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint-config-vue": "^2.0.1",
+    "eslint-plugin-vue": "^1.0.0"
   }
 }

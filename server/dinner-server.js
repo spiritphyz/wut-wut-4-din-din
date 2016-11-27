@@ -6,7 +6,7 @@ const port = '1688';
 const redis = require('redis');
 require('./api-keys.js');
 
-// attach middleware
+// attach services
 const app = express();
 const redisClient = redis.createClient();
 app.use(bodyParser.urlencoded({ extended: true }));

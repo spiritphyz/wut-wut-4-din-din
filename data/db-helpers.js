@@ -34,7 +34,8 @@ exports.gatherRecipes = function(sortedItems, res) {
     } else {
       const parsedData = JSON.parse(body);
       redisClient.set(items, body, redis.print);
-      res.status(200).send(parsedData);
+      res.status(200).send(parsedData); // not supposed to work
+      // bodyparser is supposed to handle json conversions ?
     }
   };
 

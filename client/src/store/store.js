@@ -8,11 +8,6 @@ export default new Vuex.Store({
     veggies: [],
     newVeggie: '' 
   },
-  getters: {
-    newVeggie: state => state.newVeggie,
-    veggies: state => state.veggies.filter(veggie => !veggie.selected),
-    selectedVeggies: state => state.veggies.filter(veggie => veggie.selected)
-  },
   // Mutatations are "committed"
   //
   mutations: {
@@ -64,11 +59,16 @@ export default new Vuex.Store({
     removeVeggie({commit}, veggie) {
       commit('REMOVE_VEGGIE', veggie);
     },
-    completeVeggie({commit}, veggie) {
-      commit('COMPLETE_VEGGIE', veggie);
+    selectVeggie({commit}, veggie) {
+      commit('SELECT_VEGGIE', veggie);
     },
     clearVeggie({commit}) {
       commit('CLEAR_VEGGIE');
     }
+  },
+  getters: {
+    newVeggie: state => state.newVeggie,
+    veggies: state => state.veggies.filter(veggie => !veggie.selected),
+    selectedVeggies: state => state.veggies.filter(veggie => veggie.selected)
   }
 });
