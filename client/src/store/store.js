@@ -30,6 +30,8 @@ export default new Vuex.Store({
     GET_VEGGIE(state, veggie) {
       state.newVeggie = veggie;
     },
+    // maybe adding derivedVeggie breaks the ability to edit
+    // the ToDo item
     ADD_VEGGIE(state, derivedVeggie) {
       if (derivedVeggie) {
         state.veggies.push({

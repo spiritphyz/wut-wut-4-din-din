@@ -3,7 +3,6 @@
   {{ deriveLocation }}
   {{ deriveMonthPeriod }}
   {{ deriveMonth }}
-  {{ deriveVeggies }}
   <h3>In-season items for {{ usaState }}, {{ monthPeriod }} {{ month }}</h3>
   <h4 v-if="veggies.length > 0">Current: {{veggies.length}}</h4>
   <ul class="demo-list-item mdl-list">
@@ -75,23 +74,22 @@
               console.log('🍊  GeoIP Country is', country);
               console.log('🍊  GeoIP State is', newTerritory);
               context.$store.dispatch('setTerritory', newTerritory);
+
+              // derive veggies from geolocation & current date
+              const usaState = context.$store.getters.territory; 
+              console.log('🍊  usastate is: ', usaState);
+              const month = context.$store.getters.month;
+              console.log('🍊  month', month);
+              const monthPeriod = context.$store.getters.monthPeriod;
+              console.log('🍊  monthPeriod', monthPeriod);
+              const seasonal = Seasonal[usaState][month][monthPeriod].produce;
+              console.log('🍊  seasonal', seasonal);
+              for (let veg of seasonal) {
+                context.$store.dispatch('addVeggie', veg);
+              }
             });
           })
           .catch(err => console.log('Could not fetch geolocation', err.message));
-      },
-
-      deriveVeggies () {
-        const usaState = this.$store.getters.territory; 
-        console.log('🍊  usastate is: ', usaState);
-        const month = this.$store.getters.month;
-        console.log('🍊  month', month);
-        const monthPeriod = this.$store.getters.monthPeriod;
-        console.log('🍊  monthPeriod', monthPeriod);
-        const seasonal = Seasonal[usaState][month][monthPeriod].produce;
-        console.log('🍊  seasonal', seasonal);
-        for (let veg of seasonal) {
-          this.$store.dispatch('addVeggie', veg);
-        }
       }
     }
   }
