@@ -4,7 +4,7 @@
   {{ deriveMonthPeriod }}
   {{ deriveMonth }}
   {{ deriveVeggies }}
-  <h3>In-season items for {{ usaState }} {{ monthPeriod }} {{ month }}</h3>
+  <h3>In-season items for {{ usaState }}, {{ monthPeriod }} {{ month }}</h3>
   <h4 v-if="veggies.length > 0">Current: {{veggies.length}}</h4>
   <ul class="demo-list-item mdl-list">
     <li class="mdl-list__item" v-for="veggie in veggies">
@@ -27,7 +27,6 @@
 
 <script>
   import { Seasonal } from '../produce/Seasonal';
-  // import { GetTime } from './GetTime';
 
   export default {
     methods: {
@@ -82,14 +81,20 @@
       },
 
       deriveVeggies () {
-        // Seasonal.California.November.early.produce
-
+        const usaState = this.$store.getters.territory; 
+        console.log('🍊  usastate is: ', usaState);
+        const month = this.$store.getters.month;
+        console.log('🍊  month', month);
+        const monthPeriod = this.$store.getters.monthPeriod;
+        console.log('🍊  monthPeriod', monthPeriod);
+        const seasonal = Seasonal[usaState][month][monthPeriod].produce;
+        console.log('🍊  seasonal', seasonal);
+        for (let veg of seasonal) {
+          this.$store.dispatch('addVeggie', veg);
+        }
       }
     }
   }
-
-  // this.$store.dispatch('getVeggie', 'test');
-  // this.$store.dispatch('addVeggie');
 </script>
 
 <style>

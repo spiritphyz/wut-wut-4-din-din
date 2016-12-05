@@ -30,11 +30,19 @@ export default new Vuex.Store({
     GET_VEGGIE(state, veggie) {
       state.newVeggie = veggie;
     },
-    ADD_VEGGIE(state) {
-      state.veggies.push({
-        body: state.newVeggie,
-        selected: false
-      });
+    ADD_VEGGIE(state, derivedVeggie) {
+      if (derivedVeggie) {
+        state.veggies.push({
+          body: derivedVeggie,
+          selected: false
+        });
+      }
+      if (!derivedVeggie) {
+        state.veggies.push({
+          body: state.newVeggie,
+          selected: false
+        });
+      }
     },
     EDIT_VEGGIE(state, veggie) {
       const veggies = state.veggies;
@@ -75,8 +83,8 @@ export default new Vuex.Store({
     getVeggie({commit}, veggie) {
       commit('GET_VEGGIE', veggie);
     },
-    addVeggie({commit}) {
-      commit('ADD_VEGGIE');
+    addVeggie({commit}, derivedVeggie) {
+      commit('ADD_VEGGIE', derivedVeggie);
     },
     editVeggie({commit}, veggie) {
       commit('EDIT_VEGGIE', veggie);
