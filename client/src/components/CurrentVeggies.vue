@@ -77,15 +77,12 @@
 
               // derive veggies from geolocation & current date
               const usaState = context.$store.getters.territory; 
-              console.log('🍊  usastate is: ', usaState);
               const month = context.$store.getters.month;
-              console.log('🍊  month', month);
               const monthPeriod = context.$store.getters.monthPeriod;
-              console.log('🍊  monthPeriod', monthPeriod);
               const seasonal = Seasonal[usaState][month][monthPeriod].produce;
-              console.log('🍊  seasonal', seasonal);
+              console.log('🍊  seasonal local veggies are:', seasonal);
               for (let veg of seasonal) {
-                context.$store.dispatch('addVeggie', veg);
+                context.$store.dispatch('addLocalVeggie', veg);
               }
             });
           })

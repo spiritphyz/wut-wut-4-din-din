@@ -30,21 +30,17 @@ export default new Vuex.Store({
     GET_VEGGIE(state, veggie) {
       state.newVeggie = veggie;
     },
-    // maybe adding derivedVeggie breaks the ability to edit
-    // the ToDo item
-    ADD_VEGGIE(state, derivedVeggie) {
-      if (derivedVeggie) {
-        state.veggies.push({
-          body: derivedVeggie,
-          selected: false
-        });
-      }
-      if (!derivedVeggie) {
-        state.veggies.push({
-          body: state.newVeggie,
-          selected: false
-        });
-      }
+    ADD_VEGGIE(state) {
+      state.veggies.push({
+        body: state.newVeggie,
+        selected: false
+      });
+    },
+    ADD_LOCAL_VEGGIE(state, derivedVeggie) {
+      state.veggies.push({
+        body: derivedVeggie,
+        selected: false
+      });
     },
     EDIT_VEGGIE(state, veggie) {
       const veggies = state.veggies;
@@ -85,8 +81,11 @@ export default new Vuex.Store({
     getVeggie({commit}, veggie) {
       commit('GET_VEGGIE', veggie);
     },
-    addVeggie({commit}, derivedVeggie) {
-      commit('ADD_VEGGIE', derivedVeggie);
+    addVeggie({commit}) {
+      commit('ADD_VEGGIE');
+    },
+    addLocalVeggie({commit}, derivedVeggie) {
+      commit('ADD_LOCAL_VEGGIE', derivedVeggie);
     },
     editVeggie({commit}, veggie) {
       commit('EDIT_VEGGIE', veggie);
