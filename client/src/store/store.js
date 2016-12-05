@@ -1,16 +1,32 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { GetTime } from '../components/GetTime';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    territory: '',
+    month: '',
+    monthPeriod: '',
     veggies: [],
     newVeggie: '' 
   },
   // Mutatations are "committed"
   //
   mutations: {
+    SET_TERRITORY(state, territory) {
+      state.territory = territory;
+    },
+    SET_MONTH_PERIOD(state) {
+      const day = GetTime('day');
+      state.monthPeriod = day < 16 ? 'early' : 'late';
+      console.log('🍊  Calculated period of month is', state.monthPeriod);
+    },
+    SET_MONTH(state) {
+      state.month = GetTime('month');
+      console.log('🍊  Calculated month is', state.month);
+    },
     GET_VEGGIE(state, veggie) {
       state.newVeggie = veggie;
     },
@@ -41,12 +57,21 @@ export default new Vuex.Store({
   // 
   // Actions use ES6 argument destructuring with shorter syntax
   //    instead of the ES5 equivalent:
-  //     addTodo = function(store) {
+  //     addVeggie = function(store) {
   //       var commit = store.commit
   //       commit('ADD_VEGGIE')
   //     }
   //
   actions: {
+    setTerritory({commit}, territory) {
+      commit('SET_TERRITORY', territory);
+    },
+    setMonthPeriod({commit}) {
+      commit('SET_MONTH_PERIOD');
+    },
+    setMonth({commit}) {
+      commit('SET_MONTH');
+    },
     getVeggie({commit}, veggie) {
       commit('GET_VEGGIE', veggie);
     },
@@ -67,6 +92,9 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    territory: state => state.territory,
+    monthPeriod: state => state.monthPeriod,
+    month: state => state.month,
     newVeggie: state => state.newVeggie,
     veggies: state => state.veggies.filter(veggie => !veggie.selected),
     selectedVeggies: state => state.veggies.filter(veggie => veggie.selected)
