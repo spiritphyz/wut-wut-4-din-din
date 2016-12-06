@@ -27,11 +27,11 @@
   export default {
     methods: {
       getVeggie(e) {
-        this.$store.dispatch('getVeggie', e.target.value)
+        this.$store.dispatch('getVeggie', e.target.value);
       },
       addVeggie() {
-        this.$store.dispatch('addVeggie')
-        this.$store.dispatch('clearVeggie')
+        this.$store.dispatch('addVeggie');
+        this.$store.dispatch('clearVeggie');
       }
     },
     computed: {

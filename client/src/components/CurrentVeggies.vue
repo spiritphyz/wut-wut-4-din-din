@@ -66,7 +66,9 @@
 
       deriveLocation () {
           const context = this;
-          fetch('http://freegeoip.net/json/', {mode: 'cors'})
+          // const url = 'https://crossorigin.me/http://freegeoip.net/json/';
+          const url = 'http://freegeoip.net/json/';
+          fetch(url, {mode: 'cors'})
           .then(function(response) {
             response.json().then(function(data) {
               const country = data.country_name;
@@ -86,7 +88,7 @@
               }
             });
           })
-          .catch(err => console.log('Could not fetch geolocation', err.message));
+          .catch(err => console.log('🍊  Could not fetch geolocation:', err.message));
       }
     }
   }

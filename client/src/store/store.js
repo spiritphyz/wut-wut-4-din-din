@@ -31,7 +31,7 @@ export default new Vuex.Store({
       state.newVeggie = veggie;
     },
     ADD_VEGGIE(state) {
-      state.veggies.push({
+      state.veggies.unshift({
         body: state.newVeggie,
         selected: false
       });

@@ -30,9 +30,10 @@
     margin-top: 60px;
   }
 
-  h1, h2 {
+  h1, h2, h3 {
     font-weight: light;
     text-align: left;
+    padding-left: 20px;
   }
 
   ul {
