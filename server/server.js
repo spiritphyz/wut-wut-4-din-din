@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
+const redis = require('redis');
 const db = require('../data/db-helpers.js');
+
 const metadata = require('../package.json');
 const port = '1688';
-const redis = require('redis');
 require('./api-keys.js');
 
 // attach middleware
@@ -13,12 +15,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // register location of static files
-app.use(express.static(__dirname + '../client'));
+// app.use(express.static(__dirname + '../client'));
+app.use(express.static(path.join(__dirname, '../client'))); 
 
 // default route
 app.get('/', function(req, res) {
-  res.sendFile('./index.html', {'root': '../client'});
-  // res.status(200).send('ok');
+  // res.sendFile('./index.html', {'root': '../client'});
+  res.sendFile(path.join(__dirname, '/../client/index.html'));
 });
 
 // getRecipe route
@@ -38,7 +41,7 @@ app.get('/getRecipes', function(req, res) {
       console.log('🍊  Found in Redis!', sortedItems);
       res.status(200).send(parsed);
     } else {
-      console.log('🍊  Not found in Redis:', query);
+      console.log('🍊  Not found in Redis:', sortedItems);
       db.gatherRecipes(sortedItems, res);
     }
   });
