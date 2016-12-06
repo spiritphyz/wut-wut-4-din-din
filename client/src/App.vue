@@ -1,5 +1,10 @@
 <template>
   <div id="app" class="container">
+    <div class="eggplant">
+      <img src="https://cloud.githubusercontent.com/assets/7908723/20235152/59d8d64a-a83f-11e6-9534-4119d03f3874.png" width="100" align="left">
+    </div>
+    <br><br><br><br>
+    <h1>What&rsquo;s For Dinner?</h1>
     <SelectedVeggies></SelectedVeggies>
     <GetVeggie></GetVeggie>
     <CurrentVeggies></CurrentVeggies>
@@ -24,16 +29,27 @@
     font-family: 'Open Sans', 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
+    /*text-align: center;*/
     font-size: 10em;
     color: #2c3e50;
-    margin-top: 60px;
+    /*margin-top: 60px;*/
   }
 
-  h1, h2, h3 {
+  .eggplant {
+    padding: 10px 20px 70px 20px;
+  }
+
+  h1 {
+    font-weight: regular;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  h2, h3, h4 {
     font-weight: light;
     text-align: left;
     padding-left: 20px;
+    margin-top: 0px;
   }
 
   ul {

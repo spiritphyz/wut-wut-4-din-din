@@ -1,7 +1,7 @@
 <template>
   <div id="selected-veggies">
-    <h3 v-if="selected.length > 0">Selected</h3>
-    <h4 v-if="selected.length > 0">Current: {{selected.length}}</h4>
+    <!-- <h3 v-if="selected.length > 0">Selected</h3> -->
+    <!-- <h4 v-if="selected.length > 0">Current: {{selected.length}}</h4> -->
     <ul class="demo-list-item mdl-list">
       <li class="mdl-list__item" v-for="veggie in selected">
         {{veggie.body}}
