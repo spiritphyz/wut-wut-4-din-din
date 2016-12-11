@@ -68,9 +68,13 @@
           const context = this;
           // const url = 'https://crossorigin.me/http://freegeoip.net/json/';
           const url = 'http://freegeoip.net/json/';
-          fetch(url, {mode: 'cors'})
-          .then(function(response) {
-            response.json().then(function(data) {
+
+          const req = new XMLHttpRequest();
+          req.open('GET', url, true);
+          req.onload = function() {
+            if (req.status >= 200 && req.status < 400) {
+              let data = JSON.parse(req.responseText);
+              console.log('🍊  GeoIP response is', data);
               const country = data.country_name;
               const newTerritory = data.region_name;
               console.log('🍊  GeoIP Country is', country);
@@ -86,9 +90,14 @@
               for (let veg of seasonal) {
                 context.$store.dispatch('addLocalVeggie', veg);
               }
-            });
-          })
-          .catch(err => console.log('🍊  Could not fetch geolocation:', err.message));
+            } else {
+              console.log('🍊  Reached geoip server but got error');
+            }
+          };
+          req.onerror = function(msg) {
+            console.log('🍊  Could not fetch geolocation:', msg);
+          };
+          req.send();
       }
     }
   }
