@@ -16,12 +16,10 @@ export const GetTime = request => {
   const date = new Date();
   if (request === 'day') {
     const day = date.getDate();
-    console.log('🍊  Requested day is', day);
     return day;
   }
   if (request === 'month') {
     const month = months[ date.getMonth() + 1 ];
-    console.log('🍊  Requested month is', month);
     return month;
   }
 };
