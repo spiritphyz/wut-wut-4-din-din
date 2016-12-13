@@ -53,5 +53,15 @@ export const Seasonal = {
         'produce': [ 'Apples', 'Avocados', 'Beets', 'Bok Choy', 'Broccoli', 'Brussels Sprouts', 'Cabbage', 'Carrots', 'Cauliflower', 'Celery', 'Cucumbers', 'Fennel', 'Grapefruit', 'Grapes', 'Pacific Halibut', 'Kale', 'Lettuce', 'Mushrooms', 'Okra', 'Onions', 'Oranges', 'Pears', 'Pistachios', 'Pink Shrimp', 'Potatoes', 'Radishes', 'Rutabaga', 'Scallions', 'Snap Peas', 'Spinach', 'Squash', 'Sweet Potatoes', 'Tomatoes', 'Turkey - Bourbon Red', 'Turkey - Standard Bronze', 'Turnips']
       }
     }
+  },
+  'Oregon': {
+    'December': {
+      'early': {
+        'produce': [ 'Pacific Halibut', 'Pink Shrimp', 'Potatoes', 'Snap Peas', 'Turkey - Bourbon Red', 'Turkey - Standard Bronze']
+      },
+      'late': {
+        'produce': [ 'Pacific Halibut', 'Pink Shrimp', 'Potatoes', 'Snap Peas', 'Turkey - Bourbon Red', 'Turkey - Standard Bronze']
+      }
+    },
   }
 };
