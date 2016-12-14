@@ -9,7 +9,6 @@
 
 
 /* skeleton to add more veggies by month
-   http://www.simplesteps.org/eat-local/state/california
 
   'usaState': {
     'Month': {
