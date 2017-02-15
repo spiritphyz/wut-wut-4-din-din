@@ -70,51 +70,51 @@
           const url = 'http://freegeoip.net/json/';
 
           // mocked usaState info
-          const newTerritory = 'Oregon';
-          context.$store.dispatch('setTerritory', newTerritory);
+          // const newTerritory = 'Oregon';
+          // context.$store.dispatch('setTerritory', newTerritory);
 
-          const usaState = context.$store.getters.territory; 
-          console.log('🍊  usaState is', usaState);
-          const month = 'December';
-          console.log('🍊  month is', month);
-          const monthPeriod = 'early';
-          console.log('🍊  monthPeriod is', monthPeriod);
-          const seasonal = Seasonal[usaState][month][monthPeriod].produce;
-          console.log('🍊  seasonal array is', seasonal);
-          for (let veg of seasonal) {
-            context.$store.dispatch('addLocalVeggie', veg);
-          }
+          // const usaState = context.$store.getters.territory; 
+          // console.log('🍊  usaState is', usaState);
+          // const month = 'December';
+          // console.log('🍊  month is', month);
+          // const monthPeriod = 'early';
+          // console.log('🍊  monthPeriod is', monthPeriod);
+          // const seasonal = Seasonal[usaState][month][monthPeriod].produce;
+          // console.log('🍊  seasonal array is', seasonal);
+          // for (let veg of seasonal) {
+          //   context.$store.dispatch('addLocalVeggie', veg);
+          // }
 
-          // const req = new XMLHttpRequest();
-          // req.open('GET', url, true);
-          // req.onload = function() {
-          //   console.log('🍊  Executing XHR to', url);
-          //   if (req.status >= 200 && req.status < 400) {
-          //     let data = JSON.parse(req.responseText);
-          //     console.log('🍊  GeoIP response is', data);
-          //     const country = data.country_name;
-          //     const newTerritory = data.region_name;
-          //     console.log('🍊  GeoIP Country is', country);
-          //     console.log('🍊  GeoIP State is', newTerritory);
-          //     context.$store.dispatch('setTerritory', newTerritory);
+          const req = new XMLHttpRequest();
+          req.open('GET', url, true);
+          req.onload = function() {
+            console.log('🍊  Executing XHR to', url);
+            if (req.status >= 200 && req.status < 400) {
+              let data = JSON.parse(req.responseText);
+              console.log('🍊  GeoIP response is', data);
+              const country = data.country_name;
+              const newTerritory = data.region_name;
+              console.log('🍊  GeoIP Country is', country);
+              console.log('🍊  GeoIP State is', newTerritory);
+              context.$store.dispatch('setTerritory', newTerritory);
 
-          //     // derive veggies from geolocation & current date
-          //     const usaState = context.$store.getters.territory; 
-          //     const month = context.$store.getters.month;
-          //     const monthPeriod = context.$store.getters.monthPeriod;
-          //     const seasonal = Seasonal[usaState][month][monthPeriod].produce;
-          //     console.log('🍊  seasonal local veggies are:', seasonal);
-          //     for (let veg of seasonal) {
-          //       context.$store.dispatch('addLocalVeggie', veg);
-          //     }
-          //   } else {
-          //     console.log('🍊  Reached geoip server but got error');
-          //   }
-          // };
-          // req.onerror = function(msg) {
-          //   console.log('🍊  Could not fetch geolocation:', msg);
-          // };
-          // req.send();
+              // derive veggies from geolocation & current date
+              const usaState = context.$store.getters.territory; 
+              const month = context.$store.getters.month;
+              const monthPeriod = context.$store.getters.monthPeriod;
+              const seasonal = Seasonal[usaState][month][monthPeriod].produce;
+              console.log('🍊  seasonal local veggies are:', seasonal);
+              for (let veg of seasonal) {
+                context.$store.dispatch('addLocalVeggie', veg);
+              }
+            } else {
+              console.log('🍊  Reached geoip server but got error');
+            }
+          };
+          req.onerror = function(msg) {
+            console.log('🍊  Could not fetch geolocation:', msg);
+          };
+          req.send();
       }
     }
   }
